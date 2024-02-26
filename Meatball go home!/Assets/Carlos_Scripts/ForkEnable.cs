@@ -21,7 +21,7 @@ public class ForkEnable : MonoBehaviour
         {
             currOffset -= Time.deltaTime * 12;
             Enemy.GetComponent<NavMeshAgent>().baseOffset = currOffset;
-            Debug.Log("Dropping");
+           // Debug.Log("Dropping");
             if (currOffset <= .5)
             {
                 fall = false;
@@ -32,10 +32,10 @@ public class ForkEnable : MonoBehaviour
         {
             currOffset += Time.deltaTime * 3;
             Enemy.GetComponent<NavMeshAgent>().baseOffset = currOffset;
-            Debug.Log("Upsies");
+            //Debug.Log("Upsies");
             if (currOffset >= (height - .5))
             {
-                Debug.Log("Back");
+                //Debug.Log("Back");
                 up = false;
             }
         }
@@ -46,7 +46,7 @@ public class ForkEnable : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         up = true;
-        Debug.Log("Rising");
+        //Debug.Log("Rising");
     }
     IEnumerator AttackDelay()
     {
@@ -57,10 +57,10 @@ public class ForkEnable : MonoBehaviour
 
         private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Detected");
+       // Debug.Log("Detected");
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player");
+           // Debug.Log("Player");
             fall = true;
         StartCoroutine("AttackDelay");
         }
