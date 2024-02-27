@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CollisionTest : MonoBehaviour
 {
-    public GameObject YouLost;
+    public GameObject YouWon;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,7 @@ public class CollisionTest : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("collission detected");
-            YouLost.SetActive(true);
+            YouWon.SetActive(true);
         }
     }
 }
