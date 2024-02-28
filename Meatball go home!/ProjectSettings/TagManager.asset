@@ -3,12 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - player
+  - Player
   - Water
   - UI
   - wall
@@ -42,5 +43,5 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: UI
-    uniqueID: 1501414323
+    uniqueID: 2652818877
     locked: 0
