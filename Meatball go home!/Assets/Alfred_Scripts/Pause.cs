@@ -42,7 +42,7 @@ public class Pause : MonoBehaviour
     public void LoadMainMenu()
     {
         Time.timeScale = 1f;
-        //SceneManager.LoadScene(""); whatever Alfred's main menu scene is defined as
+        SceneManager.LoadScene("Alfred_Scene"); //whatever Alfred's main menu scene is defined as
         Debug.Log("Loading Menu...");
     }
 }
