@@ -9,9 +9,12 @@ public class ForkEnable : MonoBehaviour
     public float height = 7;
     public float  currOffset = 7;
     private bool up, fall;
+public GameObject Hit;
+    //public Animator animator;
     void Start()
     {
         Enemy.GetComponent<NavMeshAgent>().baseOffset = height;
+        //animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,6 +22,9 @@ public class ForkEnable : MonoBehaviour
     {
          if(fall)
         {
+            //animator.SetTrigger("AttackAnim");
+            Instantiate(Hit, transform.parent.transform);
+        
             currOffset -= Time.deltaTime * 12;
             Enemy.GetComponent<NavMeshAgent>().baseOffset = currOffset;
            // Debug.Log("Dropping");
@@ -30,6 +36,8 @@ public class ForkEnable : MonoBehaviour
         }
         if(up)
         {
+           
+           
             currOffset += Time.deltaTime * 3;
             Enemy.GetComponent<NavMeshAgent>().baseOffset = currOffset;
             //Debug.Log("Upsies");
@@ -44,6 +52,7 @@ public class ForkEnable : MonoBehaviour
 
     IEnumerator GroundWait()
     {
+        
         yield return new WaitForSeconds(.5f);
         up = true;
         //Debug.Log("Rising");
@@ -60,7 +69,8 @@ public class ForkEnable : MonoBehaviour
        // Debug.Log("Detected");
         if (other.gameObject.CompareTag("Player"))
         {
-           // Debug.Log("Player");
+            
+            // Debug.Log("Player");
             fall = true;
         StartCoroutine("AttackDelay");
         }
