@@ -3884,6 +3884,7 @@ GameObject:
   - component: {fileID: 315354962}
   - component: {fileID: 315354961}
   - component: {fileID: 315354960}
+  - component: {fileID: 315354963}
   m_Layer: 0
   m_Name: Pause Script
   m_TagString: Untagged
@@ -3931,6 +3932,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &315354963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315354959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71add89c648865440b9149bb13e979da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FreeRoam: 0
+  TimedMode: 0
+  Fork: {fileID: 1074799018}
 --- !u!1001 &318720078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18709,7 +18725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: eeb911deb9134444fbd0e7a241583940, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -18720,7 +18736,19 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cda7ca49-eedc-46c5-8e07-961313dc098c
+    m_ActionName: Base/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: acca315a-d4c6-47d7-8fc7-2d75eb2f33a6
+    m_ActionName: Base/Look[/Mouse/delta/up,/Mouse/delta/down,/Mouse/delta/left,/Mouse/delta/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ad25766f-e616-41e3-b1d4-410afb453a32
+    m_ActionName: Base/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Base
