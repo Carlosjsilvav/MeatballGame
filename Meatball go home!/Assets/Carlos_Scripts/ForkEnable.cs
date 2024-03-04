@@ -9,11 +9,17 @@ public class ForkEnable : MonoBehaviour
     public float height = 7;
     public float  currOffset = 7;
     private bool up, fall;
-public GameObject Hit;
+    public GameObject Hit;
+
+    public AudioSource audioSource;
+    public AudioClip attackSound;
+    public AudioClip landSound;
+
     //public Animator animator;
     void Start()
     {
         Enemy.GetComponent<NavMeshAgent>().baseOffset = height;
+        up = true;
         //animator = GetComponent<Animator>();
     }
 
@@ -52,7 +58,7 @@ public GameObject Hit;
 
     IEnumerator GroundWait()
     {
-        
+        audioSource.PlayOneShot(landSound);
         yield return new WaitForSeconds(.5f);
         up = true;
         //Debug.Log("Rising");
@@ -72,7 +78,8 @@ public GameObject Hit;
             
             // Debug.Log("Player");
             fall = true;
-        StartCoroutine("AttackDelay");
+            audioSource.PlayOneShot(attackSound);
+            StartCoroutine("AttackDelay");
         }
 
     }

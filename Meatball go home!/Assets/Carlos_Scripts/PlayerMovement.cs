@@ -33,11 +33,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     public PlayerInput actions;
     public Camera myCam;
-    
+    public AudioSource audioSource;
+    public AudioClip jumpSound;
+
     // Start is called before the first frame update
     void Start()
     {
         InitializeComponents();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -46,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         CameraUpdate();
         MoveUpdate();
     }
+
     void InitializeComponents(){
         //Components
         rb = GetComponent<Rigidbody>();
@@ -66,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
             grounded = false;
+            audioSource.PlayOneShot(jumpSound);
         }
     }
 
